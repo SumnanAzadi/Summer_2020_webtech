@@ -1,0 +1,78 @@
+<html>
+   <head>
+      <style>
+         .error {color: #FF0000;}
+      </style>
+   </head>
+   
+   <body>
+      <h2>HTML-FORM Validation using PHP</h2>
+      <p><span class = "error">* required field.</span></p>
+      <form method = "post" action = "form.html">
+         <table>
+            <tr>
+               <td>Name:</td>
+               <td>
+               	<input type = "text" name = "name">
+               </td>
+            </tr>
+           
+            <tr>
+               <td>E-mail: </td>
+               <td>
+               	<input type = "text" name = "email">
+               </td>
+            </tr>
+            <tr>
+               <td>Gender:</td>
+               <td>
+                  <input type = "radio" name = "gender" value = "female">Female
+                  <input type = "radio" name = "gender" value = "male">Male
+               </td>
+            </tr>
+            <tr>
+               <td>DOB:</td>
+               <td>
+                  <input type = "text" name = "day">
+                  <input type = "text" name = "day">
+                  <input type = "text" name = "day">
+               </td>
+            </tr>
+            <tr>
+               <td>DEGREE</td>
+               <td> 
+					<input type="checkbox">SSC 
+					<input type="checkbox"> HSC 
+					<input type="checkbox"> BSC
+				</td>
+            </tr>
+            <tr>
+               <td>BLOOD GROUP</td>
+               <td> 
+				 	<select >
+				  		<option value="">A+</option>
+				   		<option value="">B+</option>
+				    	<option value="">AB+</option> 
+					</select> 
+				</td>
+            </tr>
+            <tr>
+               <td>PROFILE PICTURE</td>
+               <td>
+               		<input type = "text" name = "name">
+				</td>
+				<td>
+					<input type="file"> 
+				</td>
+            </tr>
+ 
+            <td>
+               <input type = "submit" name = "submit" value = "Submit"> 
+            </td>
+				
+         </table>
+			
+      </form>
+   
+   </body>
+</html>
