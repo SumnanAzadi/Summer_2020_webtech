@@ -6,8 +6,51 @@
    </head>
    
    <body>
+      <?php
+         // define variables and set to empty values
+         $nameErr = $emailErr = $genderErr = $websiteErr = "";
+         $name = $email = $gender = $comment = $website = "";
+         
+         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+         	//name validation
+            if (empty($_POST["name"])) {
+               $nameErr = "Name is required";
+            }else {
+               $name = test_input($_POST["name"]);
+            }
+
+            //email validation
+            if (empty($_POST["email"])) {
+               $emailErr = "Email is required";
+            }else {
+               $email = test_input($_POST["email"]);
+               if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                  $emailErr = "Invalid email format"; 
+               }
+            }
+
+            //gender validation
+            if (empty($_POST["gender"])) {
+               $genderErr = "Gender is required";
+            }else {
+               $gender = test_input($_POST["gender"]);
+            }
+            //DOB validation
+            //DEGREE validation
+            //gender validation
+         }
+         
+         //check prerequisite
+         function test_input($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+         }
+      ?>
+     
       <h2>HTML-FORM Validation using PHP</h2>
-      <p><span class = "error">* required field.</span></p>
       <form method = "post" action = "form.html">
          <table>
             <tr>
