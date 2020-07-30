@@ -1,13 +1,26 @@
 <?php 
-
+session_start();
 if(isset($_POST['submit'])){
-    $name =htmlentities($_POST['name']);
-    $password = $_POST["password"])
-	$confirm_password = $_POST["confirmPassword"])
+	$name =htmlentities($_POST['name']);
+	$uname = htmlentities($_POST['userName']);
+    $password = $_POST["password"]);
+	$confirm_password = $_POST["confirmPassword"]);
+
     if(empty($name) || empty($email) || empty($username) || empty($password) || empty($confirmPassword) || empty($gender || empty($year) || empty($month) || empty($day) ){
         echo "Please fill up all the fields";
-    }else{
-        setcookie('name',$name, time()+3600);
+	}
+	if{
+		if($password!=$confirm_password){
+
+			echo "password is not matched";
+	}
+	}else{
+        	$_SESSION['name'] 		= $name;
+			$_SESSION['email'] 	= $email;
+            $_SESSION['userName'] 		= $uname;
+            $_SESSION['password']= $password;
+			$_SESSION['gender']= $gender;
+			$_SESSION['dob']= $dob;
         header('Location: login.php');
     }
 }else{
@@ -19,6 +32,23 @@ if(isset($_POST['submit'])){
     <title>Registration</title>
 </head>
 <body>
+		<center>
+				<table width="100%" border="1">
+					<tr height="100px">
+						<td width="100px">
+							<a href="index.html"><img src="./logo (1).png" width="150px" height="100px"></a>
+						<td align="right" colspan="2">
+							<a href="login.php">Home  | </a>
+							<a href="login.php">login  | </a>
+							<a href="login.php">Registration     | </a>
+						</td>
+						</td>
+                    </tr>
+					<tr width="70%" height="300px">
+						<td colspan="3">
+					</tr>
+				</table>
+         <center>
 	<fieldset>
 	    <legend><b>REGISTRATION</b></legend>
 		<form>
