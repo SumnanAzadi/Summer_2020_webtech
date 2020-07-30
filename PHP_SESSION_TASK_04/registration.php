@@ -3,17 +3,13 @@ session_start();
 if(isset($_POST['submit'])){
 	$name =htmlentities($_POST['name']);
 	$uname = htmlentities($_POST['userName']);
-    $password = $_POST["password"]);
-	$confirm_password = $_POST["confirmPassword"]);
-
-    if(empty($name) || empty($email) || empty($username) || empty($password) || empty($confirmPassword) || empty($gender || empty($year) || empty($month) || empty($day) ){
+    $password = $_POST["password"];
+	$confirm_password = $_POST["confirmPassword"];
+    if(empty($name) || empty($email) || empty($username) || empty($password) || empty($confirmPassword) || empty($gender) || empty($year) || empty($month) || empty($day) ){
         echo "Please fill up all the fields";
 	}
-	if{
-		if($password!=$confirm_password){
-
+		else if($password!=$confirm_password){
 			echo "password is not matched";
-	}
 	}else{
         	$_SESSION['name'] 		= $name;
 			$_SESSION['email'] 	= $email;
@@ -26,6 +22,7 @@ if(isset($_POST['submit'])){
 }else{
     header('location: registration.php');
 }
+
 ?>
 <!DOCTYPE html>
 <head>

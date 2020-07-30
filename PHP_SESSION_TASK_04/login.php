@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['submit'])){
     $name =htmlentities($_POST['name']);
     $password =md5($_POST['password']);
