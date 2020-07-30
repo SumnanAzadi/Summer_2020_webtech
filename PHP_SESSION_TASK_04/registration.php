@@ -29,23 +29,23 @@ if(isset($_POST['submit'])){
     <title>Registration</title>
 </head>
 <body>
+	<center>
+			<table width="100%" border="1">
+				<tr height="100px">
+					<td width="100px">
+						<a href="index.html"><img src="./logo (1).png" width="150px" height="100px"></a>
+					<td align="right" colspan="2">
+						<a href="login.php">Home  | </a>
+						<a href="login.php">login  | </a>
+						<a href="login.php">Registration     | </a>
+					</td>
+					</td>
+				</tr>
+				<tr width="70%" height="300px">
+					<td colspan="3">
+				</tr>
+			</table>
 		<center>
-				<table width="100%" border="1">
-					<tr height="100px">
-						<td width="100px">
-							<a href="index.html"><img src="./logo (1).png" width="150px" height="100px"></a>
-						<td align="right" colspan="2">
-							<a href="login.php">Home  | </a>
-							<a href="login.php">login  | </a>
-							<a href="login.php">Registration     | </a>
-						</td>
-						</td>
-                    </tr>
-					<tr width="70%" height="300px">
-						<td colspan="3">
-					</tr>
-				</table>
-         <center>
 	<fieldset>
 	    <legend><b>REGISTRATION</b></legend>
 		<form>
