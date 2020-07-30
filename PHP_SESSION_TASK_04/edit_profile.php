@@ -8,9 +8,9 @@ session_start();
 <body>
 	<table border="1" style="width:100% ; border:1px solid;" >
 		<tr>
-		<th width="100px"><img src="./logo (1).png"></th>
+		<th width="100px"><img src="./logo.png"></th>
 		<th width="auto" ></th>
-		<th width="200px"><a href="">loggedin as <?php  echo $_SESSION['userName'];	 ?>| </a><a href="">logout  </a></th>
+		<th width="200px"><a href="">Hi <?php  echo $_SESSION['name'];	 ?>| </a><a href="">logout  </a></th>
 		</tr>
 		<tr>
 			<td>
