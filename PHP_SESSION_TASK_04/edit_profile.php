@@ -1,12 +1,31 @@
 <?php
-
-
+session_start();
 ?>
 <!DOCTYPE html>
 <head>
     <title>Edit profile</title>
 </head>
 <body>
+	<table border="1" style="width:100% ; border:1px solid;" >
+		<tr>
+		<th width="100px"><img src="./logo (1).png"></th>
+		<th width="auto" ></th>
+		<th width="200px"><a href="">loggedin as <?php  echo $_SESSION['userName'];	 ?>| </a><a href="">logout  </a></th>
+		</tr>
+		<tr>
+			<td>
+			<h3>Account</h3><hr>
+			<ul>
+				<li><a href="">Dashboard</a></li>
+				<li><a href="./view_profile.php">View Profile</a></li>
+				<li><a href="./edit_profile">Edit Profile</a></li>
+				<li><a href="./forgot_password.php">Change password</a></li>
+				<li><a href="/login.php">Logout</a></li>
+			</ul>
+			</td>
+		</tr>
+		<td height="400px"></td>
+	</table>
 	<fieldset>
 	    <legend><b>EDIT PROFILE</b></legend>
 		<form>
@@ -15,7 +34,7 @@
 				<tr>
 					<td>Name</td>
 					<td>:</td>
-					<td><input name="name" type="text" value="Bob"></td>
+					<td><input name="name" type="text" value="<?php echo $_SESSION['name']; ?>"></td>
 					<td></td>
 				</tr>		
 				<tr><td colspan="4"><hr/></td></tr>
@@ -23,7 +42,7 @@
 					<td>Email</td>
 					<td>:</td>
 					<td>
-						<input name="email" type="text" value="bob@aiub.edu">
+						<input name="email" type="text" value="<?php echo $_SESSION['email']; ?>">
 						<abbr title="hint: sample@example.com"><b>i</b></abbr>
 					</td>
 					<td></td>
@@ -44,7 +63,7 @@
 					<td valign="top">Date of Birth</td>
 					<td valign="top">:</td>
 					<td>
-						<input name="dob" type="text" value="23/12/1999">
+						<input name="dob" type="text" value="<?php echo $_SESSION['dob']; ?>">
 						<br/>
 						<font size="2"><i>(dd/mm/yyyy)</i></font>
 					</td>
