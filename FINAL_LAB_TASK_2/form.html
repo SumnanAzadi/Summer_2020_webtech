@@ -1,0 +1,138 @@
+<html>
+<head> <title>Person Profile</title> </head>
+<body> 
+	<center> 
+		<table> 
+			<tr > 
+				<td colspan="3"> 
+					<h1> Person Profile</h1>
+				</td>
+			</tr>
+		</table>
+			<form name="myForm" onsubmit="return validateForm()" method="post">
+				<table border="1">
+					<tr> 
+				<td>Name</td> 
+				<td>
+					<input type="text" name="name">
+				</td> 
+			</tr> 
+			<tr> 
+				<td>Email</td> 
+				<td>
+					<input type="email" name="email">
+				</td> 
+			</tr> 
+			<tr> 
+				<td>Gender</td> 
+				<td> 
+					<input type="radio" name="gender" value="Male">Male 
+					<input type="radio" name="gender" value="Female">Female 
+					<input type="radio" name="gender" value="Other">Other 
+				</td> 
+			</tr>
+			<tr>
+			 <td>Date Of Birth</td>
+			  <td>
+			  	<input type="date">
+			  </td>
+			</tr>
+			<tr> 
+				<td>Blood Group</td>
+				 <td> 
+				 	<select name="blood" id="blood">
+				 		<option value="">- select -</option>
+				  		<option value="a">A+</option>
+				   		<option value="b">B+</option>
+				    	<option value="ab">AB+</option> 
+					</select> 
+				</td> 
+			</tr>
+			<tr> 
+				<td>Degree</td> 
+				<td> 
+					<input type="checkbox" name="degree" value="SSc">SSC 
+					<input type="checkbox" name="degree" value="HCS"> HSC 
+					<input type="checkbox" name="degree" value="BSC"> BSC
+				</td>
+			</tr>
+			<tr> 
+				<td>Photo</td> 
+				<td colspan="2">
+					<input type="file" id="myfile"> 
+				</td>
+			</tr>
+			<tr> 
+				<td colspan="3" style="text-align: right"> 
+					<input type="submit" value="submit"> <input type="reset">
+				</td> 
+			</tr>
+				</table>
+			</form>
+	</center> 
+</body>
+<script type="text/javascript">
+function validName(x){
+	if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (x.length < 2) {
+    alert("Name has to be at least 2 characters");
+    return false;
+  }
+}
+function validEmail(x){
+	if (x.indexOf('@') == -1) {
+        alert("Not a valid email");
+        return false;
+    } else {
+        var parts = x.split('@');
+        var domain = parts[1];
+        if (domain.indexOf('.') == -1) {
+            alert("Not a valid domain address");
+            return false;
+        } else {
+            var domainParts = domain.split('.');
+            var ext = domainParts[1];
+            if (ext.length > 4 || ext.length < 2) {
+                alert("Not a valid domain address");
+                return false;
+            }
+        }
+
+    }
+}
+function validateForm() {
+	var a = document.forms["myForm"]["name"].value;
+	validName(a);
+	var b = document.forms["myForm"]["email"].value;
+	validEmail(b);
+	var c = document.forms["myForm"].querySelectorAll('input[name="gender"]:checked');
+	if (!c.length) {
+		alert('You must select a gender');
+		return false;
+	}
+	var d = document.forms["myForm"].querySelector('input[type="date"]');
+	if (d.value == '') {
+		alert('You must select your DOB');
+		return false;
+	}
+	var e = document.getElementById("blood").value;
+	if (e.length <= 0) {
+        alert("Please select blood group");
+        return false;
+    }
+    var f = document.forms["myForm"].querySelectorAll('input[name="degree"]:checked');
+	if (!f.length) {
+		alert('You must select a Degree');
+		return false;
+	}
+	var g = document.getElementById("myfile").value;
+	if (g.length <= 0) {
+        alert("Please select a file");
+        return false;
+    }
+}
+</script>
+</html>
