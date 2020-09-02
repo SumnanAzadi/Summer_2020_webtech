@@ -15,6 +15,9 @@
 				<td>
 					<tr>
 						<td>
+							<input type="button" id="mol" value="Create New User" onclick="op()"> |
+						</td>
+						<td>
 							<input type="button" id="mol" value="Create New User" onclick="def()"> |
 						</td>
 						<td>

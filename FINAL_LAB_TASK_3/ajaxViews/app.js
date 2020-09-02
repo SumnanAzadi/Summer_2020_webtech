@@ -41,3 +41,17 @@ function efg(){
 		}
 	}
 }
+
+function op(){
+	aside = document.getElementById("rightbar");
+	if(XMLHttpRequest) var x = new XMLHttpRequest();
+	else var x = new ActiveXObject("Microsoft.XMLHTTP");
+	x.open("GET", "../ajaxPhp/profile.php", true);
+	x.send();
+	x.onreadystatechange = function(){
+		if(x.readyState == 4){
+			if(x.status == 200) aside.innerHTML = x.responseText;
+			else aside.innerHTML = "Error loading document";
+			}
+		}
+	}
