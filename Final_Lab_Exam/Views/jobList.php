@@ -19,9 +19,11 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in']!=1) {
 	<table border=1> 
 		<tr>
 			<td>ID</td>
+			<td>Name</td>
 			<td>Title</td>
-			<td>Details</td>
-			<td>Action</td>
+			<td>Location</td>
+			<td>Salary</td>
+			<td>Actions</td>
 		</tr>
 		<?php
 				$userId = $_SESSION['userId'];
