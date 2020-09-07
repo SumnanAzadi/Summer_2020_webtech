@@ -25,13 +25,8 @@ if(isset($_POST['submit'])){
 				$_SESSION['name'] = $user['name'];
 				$_SESSION['userType'] = $user['userType'];
 				$_SESSION['logged_in'] = 1;
-				if (isset($_POST['save'])) {
-					setcookie('username', $username, time() + (86400 * 30), "/");
-					setcookie('password', $password, time() + (86400 * 30), "/");
-				}else{
-					unset($_COOKIE['username']);
-					unset($_COOKIE['password']);
-				}
+					setcookie('username', $username, time()+3600, "/");
+					setcookie('password', $password, time()+3600, "/");
 				header('location:../Views/dashboard.php');
 		   }else{
 		   		$_SESSION['message'] = '<font color="red">User does not exists!</font><br>';
